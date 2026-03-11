@@ -37,7 +37,7 @@ async function startBot() {
     if (!msg.message) return
 
     const receiver = msg.key.remoteJid
-     if (receiver !== allowedNumbers.includes(receiver)) return
+     if (allowedNumbers.includes(receiver)) return
 
     const text =
       msg.message.conversation ||
