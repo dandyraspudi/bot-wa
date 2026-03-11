@@ -12,8 +12,7 @@ async function startBot() {
   })
 
   const allowedNumbers = [
-    "6282261977043@s.whatsapp.net",
-    "6288212810834@s.whatsapp.net"
+    "6288294080777@s.whatsapp.net"
   ]
 
   sock.ev.on("creds.update", saveCreds)
