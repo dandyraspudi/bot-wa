@@ -43,8 +43,11 @@ async function startBot() {
       msg.message.conversation ||
       msg.message?.extendedTextMessage?.text
 
+    console.log(text, " <<text")
+
     if (text === "halo") {
 
+        console.log(text, " <<masuk")
       await sock.sendMessage(msg.key.remoteJid, {
         text: "Kenapa bub"
       })
