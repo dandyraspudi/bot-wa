@@ -8,7 +8,9 @@ async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState("auth")
 
   const sock = makeWASocket({
-    auth: state
+    auth: state,
+    syncFullHistory: true,
+    markOnlineOnConnect: true
   })
 
   const allowedNumbers = [
@@ -35,12 +37,14 @@ async function startBot() {
     const msg = messages[0]
     console.log("message received:", msg)
     if (!msg.message) return
+    if (msg.message?.protocolMessage) return
+    if (msg.messageStubType) return
 
     const receiver = msg.key.remoteJid
      if (allowedNumbers.includes(receiver)) return
 
     const text =
-      msg.message.conversation ||
+      msg.message?.conversation ||
       msg.message?.extendedTextMessage?.text
 
     console.log(text, " <<text")
