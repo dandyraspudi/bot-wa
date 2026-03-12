@@ -32,8 +32,8 @@ async function startBot() {
   })
 
   sock.ev.on("messages.upsert", async ({ messages }) => {
-
     const msg = messages[0]
+    console.log("message received:", msg)
     if (!msg.message) return
 
     const receiver = msg.key.remoteJid
