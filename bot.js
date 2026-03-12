@@ -41,7 +41,7 @@ async function startBot() {
 
     const text =
       msg.message.conversation ||
-      msg.message.extendedTextMessage?.text
+      msg.message?.extendedTextMessage?.text
 
     if (text === "halo") {
 
