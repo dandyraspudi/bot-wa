@@ -26,7 +26,7 @@ async function startBot() {
     }
 
     if (connection === "open") {
-      console.log("Bot connected ✅")
+      console.log("Bot connected")
     }
 
   })
